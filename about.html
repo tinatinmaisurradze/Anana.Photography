@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Anana Photography</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #f7f5f2; color: #3d3b3a; font-family: 'Georgia', serif; }
+        
+        .reveal-on-scroll { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
+        .reveal-visible { opacity: 1; transform: translateY(0); }
+        
+        /* Blur Effect Target */
+        .blur-content { transition: filter 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+        .is-blurred { filter: blur(6px) brightness(0.7); }
+        
+        /* Profile Image Animation */
+        #profile-trigger { 
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); 
+            z-index: 10;
+        }
+        #profile-trigger:hover { 
+            transform: scale(1.05); 
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Interactive Cards */
+        .card-hover { transition: transform 0.4s ease, box-shadow 0.4s ease; }
+        .card-hover:hover { transform: translateY(-10px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
+
+        /* Button Pulse */
+        @keyframes pulse-subtle { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.02); } }
+        .btn-animate:hover { animation: pulse-subtle 2s infinite; }
+    </style>
+</head>
+<body>
+
+    <nav class="max-w-7xl mx-auto flex justify-between items-center py-10 px-8 md:px-16 blur-content">
+        <h1 class="text-2xl font-bold tracking-tighter"><a href="index.html">ANANA PHOTOGRAPHY</a></h1>
+        <div class="flex space-x-10 text-sm uppercase tracking-widest font-medium">
+            <a href="index.html" class="hover:text-stone-500 transition-all">Work</a>
+            <a href="about.html" class="border-b-2 border-stone-800 pb-1">About</a>
+            <a href="contact.html" class="hover:text-stone-500 transition-all">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="max-w-5xl mx-auto px-8 pt-10 pb-20 reveal-on-scroll">
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+                
+                <div id="profile-trigger" class="overflow-hidden shadow-xl">
+                    <img src="profile.jpg" class="w-full aspect-[4/5] object-cover">
+                </div>
+                
+                <div class="space-y-6 blur-content">
+                    <h2 class="text-5xl md:text-6xl font-light italic leading-tight">Capturing the soul of the moment.</h2>
+                    <p class="text-lg md:text-xl leading-relaxed text-stone-600">
+                        Hello, I'm Anano. <br> My journey began with a curiosity about how light defines our memories. 
+                        Based in Tbilisi, I navigate the intersection of nature, human connection, and raw storytelling. 
+                        I don't just take photos; I curate the feeling of being there.
+                    </p>
+                    <div class="h-px w-20 bg-stone-800"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-4xl mx-auto px-8 py-20 border-t border-stone-200 reveal-on-scroll blur-content">
+            <h3 class="text-xs uppercase tracking-[0.3em] text-stone-400 mb-16 text-center">My Philosophy</h3>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="card-hover p-8 bg-stone-100 rounded-2xl">
+                    <h4 class="text-3xl font-light mb-6">Observation</h4>
+                    <p class="text-stone-600 leading-relaxed text-lg">I believe the best images are not taken; they are observed. I strive to disappear into the background, catching genuine candid expressions that define the truth of a moment.</p>
+                </div>
+                <div class="card-hover p-8 bg-stone-100 rounded-2xl">
+                    <h4 class="text-3xl font-light mb-6">Connection</h4>
+                    <p class="text-stone-600 leading-relaxed text-lg">Photography is a shared experience. I don't just photograph subjects; I build stories with people, focusing on the quiet, unfiltered emotion behind the eyes.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-5xl mx-auto px-8 py-20 reveal-on-scroll blur-content">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center border-t border-stone-200 pt-16">
+                <div class="text-sm uppercase tracking-[0.2em] font-medium border-r border-stone-200 hover:text-stone-900 transition-colors cursor-pointer">Portraiture</div>
+                <div class="text-sm uppercase tracking-[0.2em] font-medium border-r border-stone-200 hover:text-stone-900 transition-colors cursor-pointer">Event Coverage</div>
+                <div class="text-sm uppercase tracking-[0.2em] font-medium border-r border-stone-200 hover:text-stone-900 transition-colors cursor-pointer">Nature</div>
+                <div class="text-sm uppercase tracking-[0.2em] font-medium hover:text-stone-900 transition-colors cursor-pointer">Commercial</div>
+            </div>
+        </section>
+
+        <section class="max-w-xl mx-auto px-8 py-20 text-center reveal-on-scroll blur-content">
+            <h3 class="text-3xl font-light mb-10">Ready to create something together?</h3>
+            <a href="contact.html" class="btn-animate inline-block px-12 py-4 border border-stone-800 uppercase tracking-[0.2em] text-sm hover:bg-stone-900 hover:text-white transition-all duration-300">
+                Start a Conversation
+            </a>
+        </section>
+    </main>
+
+    <script>
+        // Blur logic: Only target elements with .blur-content
+        const profile = document.getElementById('profile-trigger');
+        const blurElements = document.querySelectorAll('.blur-content');
+
+        profile.addEventListener('mouseenter', () => {
+            blurElements.forEach(el => el.classList.add('is-blurred'));
+        });
+
+        profile.addEventListener('mouseleave', () => {
+            blurElements.forEach(el => el.classList.remove('is-blurred'));
+        });
+
+        // Scroll Animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('reveal-visible');
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal-on-scroll').forEach((section) => observer.observe(section));
+    </script>
+</body>
+</html>

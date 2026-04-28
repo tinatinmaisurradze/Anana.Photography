@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anana Photography | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #f7f5f2; color: #3d3b3a; font-family: 'Georgia', serif; }
+        .luxury-transition { transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
+        
+        /* Preloader transition configuration */
+        #preloader { 
+            transition: opacity 1.5s ease-in-out; 
+            opacity: 1;
+        }
+
+        /* The Breathing Text Animation */
+        @keyframes breathe {
+            0%, 100% { opacity: 0.2; transform: scale(0.98); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+        .animate-breathe { 
+            animation: breathe 3s ease-in-out infinite; 
+        }
+    </style>
+</head>
+<body>
+
+    <div id="preloader" class="fixed inset-0 z-50 flex items-center justify-center bg-black">
+        <h1 class="text-white text-3xl md:text-5xl font-sans uppercase tracking-[0.5em] animate-breathe">
+            Anana Photography
+        </h1>
+    </div>
+
+    <script>
+        // Smooth transition logic
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            
+            // Wait 3.5 seconds
+            setTimeout(() => {
+                // Fade out
+                preloader.style.opacity = '0';
+                
+                // Remove from DOM after fade finishes
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 1500); 
+            }, 3500); 
+        });
+    </script>
+
+    <nav class="absolute top-0 left-0 right-0 z-20 flex justify-between items-center p-8 md:px-16 text-white">
+        <h1 class="text-xl font-bold tracking-tighter"><a href="index.html">ANANA PHOTOGRAPHY</a></h1>
+        <div class="space-x-8 text-sm uppercase tracking-widest font-medium hidden md:block">
+            <a href="index.html" class="underline underline-offset-4">Work</a>
+            <a href="about.html" class="hover:underline underline-offset-4">About</a>
+            <a href="contact.html" class="hover:underline underline-offset-4">Contact</a>
+        </div>
+    </nav>
+
+    <section class="relative w-full h-screen overflow-hidden flex flex-col justify-center items-start pl-8 md:pl-16">
+        <img src="hero.jpg" class="absolute inset-0 w-full h-full object-cover z-0">
+        <div class="absolute inset-0 bg-black/30 z-0"></div>
+
+        <div class="relative z-10 text-left text-white px-0 md:max-w-xl">
+            <h2 class="text-4xl md:text-5xl font-light mb-8 tracking-tight leading-tight">Capturing Real <br> Moments <br> with Heart</h2>
+            <div class="flex items-center gap-8">
+                <a href="contact.html" class="border border-white/50 px-10 py-4 uppercase tracking-[0.3em] text-xs hover:bg-white hover:text-black luxury-transition">
+                    Inquire for Booking
+                </a>
+            </div>
+        </div>
+
+        <a href="#work" class="absolute bottom-10 z-10 text-white uppercase text-xs tracking-[0.3em] hover:opacity-100 opacity-60 animate-bounce">
+            Scroll
+        </a>
+    </section>
+
+    <section id="work" class="max-w-7xl mx-auto px-6 py-24">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[400px]">
+            <div class="relative group cursor-pointer md:col-span-2 md:row-span-2 overflow-hidden">
+                <img src="wedding1.jpg" class="luxury-transition w-full h-full object-cover group-hover:scale-105 group-hover:blur-sm">
+                <div class="absolute inset-0 bg-black/10 group-hover:bg-black/30 luxury-transition"></div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 luxury-transition">
+                    <h4 class="text-4xl font-light tracking-[0.2em] text-white uppercase">Weddings</h4>
+                </div>
+            </div>
+            <div class="relative group cursor-pointer md:row-span-2 overflow-hidden">
+                <img src="landscape1.jpg" class="luxury-transition w-full h-full object-cover group-hover:scale-105 group-hover:blur-sm">
+                <div class="absolute inset-0 bg-black/10 group-hover:bg-black/30 luxury-transition"></div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 luxury-transition">
+                    <h4 class="text-3xl font-light tracking-[0.2em] text-white uppercase">Landscapes</h4>
+                </div>
+            </div>
+            <div class="relative group cursor-pointer overflow-hidden">
+                <img src="portrait1.jpg" class="luxury-transition w-full h-full object-cover group-hover:scale-105 group-hover:blur-sm">
+                <div class="absolute inset-0 bg-black/10 group-hover:bg-black/30 luxury-transition"></div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 luxury-transition">
+                    <h4 class="text-2xl font-light tracking-[0.2em] text-white uppercase">Portraits</h4>
+                </div>
+            </div>
+            <div class="relative group cursor-pointer md:col-span-2 overflow-hidden">
+                <img src="jewellery1.jpg" class="luxury-transition w-full h-full object-center object-cover group-hover:scale-105 group-hover:blur-sm">
+                <div class="absolute inset-0 bg-black/10 group-hover:bg-black/30 luxury-transition"></div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 luxury-transition">
+                    <h4 class="text-2xl font-light tracking-[0.2em] text-white uppercase">Jewellery</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center py-12 bg-stone-100">
+        <p class="text-stone-500 text-sm tracking-widest">© 2026 Tinussydesign. Available for freelance.</p>
+    </footer>
+
+</body>
+</html>
