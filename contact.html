@@ -7,47 +7,57 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body { background-color: #f7f5f2; color: #3d3b3a; font-family: 'Georgia', serif; }
-        /* SVG ხატულების გათეთრება */
         .icon-white { filter: brightness(0) invert(1); }
     </style>
 </head>
 <body>
 
-    <nav class="max-w-7xl mx-auto flex justify-between items-center py-6 px-8 md:px-16">
-        <h1 class="text-2xl font-bold tracking-tighter"><a href="index.html">ANANA PHOTOGRAPHY</a></h1>
-        <div class="flex space-x-10 text-sm uppercase tracking-widest font-medium">
+    <nav class="max-w-7xl mx-auto flex justify-between items-center py-6 px-6 md:px-16">
+        <h1 class="text-xl md:text-2xl font-bold tracking-tighter z-50"><a href="index.html">ANANA PHOTOGRAPHY</a></h1>
+        
+        <div class="hidden md:flex space-x-10 text-sm uppercase tracking-widest font-medium">
             <a href="index.html" class="hover:text-stone-500 transition-all">Work</a>
             <a href="about.html" class="hover:text-stone-500 transition-all">About</a>
             <a href="contact.html" class="border-b-2 border-stone-800 pb-1">Contact</a>
         </div>
+
+        <button id="mobile-menu-button" class="md:hidden z-50 focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+        </button>
     </nav>
 
-    <section class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 overflow-hidden">
+    <div id="mobile-menu" class="hidden fixed inset-0 z-40 bg-stone-100 flex flex-col items-center justify-center space-y-8 uppercase tracking-widest text-lg">
+        <a href="index.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <section class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2">
         
-        <div class="relative p-12 md:p-24 flex flex-col justify-center items-center text-center min-h-[600px]">
+        <div class="relative p-8 md:p-24 flex flex-col justify-center items-center text-center min-h-[400px] md:min-h-[600px]">
             <img src="contact-hero.jpg" class="absolute inset-0 w-full h-full object-cover blur-[3px]">
             <div class="absolute inset-0 bg-black/40"></div>
             
-            <div class="relative z-10">
-                <h2 class="text-5xl font-light text-white mb-6 italic">Let's Connect</h2>
-                <p class="text-stone-200 max-w-sm mx-auto leading-relaxed mb-12">Available for worldwide travel and commissions. Reach out to discuss your vision.</p>
+            <div class="relative z-10 px-4">
+                <h2 class="text-3xl md:text-5xl font-light text-white mb-6 italic">Let's Connect</h2>
+                <p class="text-stone-200 text-sm md:text-base max-w-sm mx-auto leading-relaxed mb-8 md:mb-12">Available for worldwide travel and commissions. Reach out to discuss your vision.</p>
             </div>
 
-            <div class="relative z-10 flex gap-8 text-white items-center">
+            <div class="relative z-10 flex gap-6 md:gap-8 text-white items-center">
                 <a href="https://www.instagram.com/anana_photography_/" target="_blank" class="hover:text-stone-300 transition-colors">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.77 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    <svg class="w-5 h-5 md:w-6 md:h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.77 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                 </a>
                 <a href="https://www.facebook.com/Anana-Photography-106830555524358" target="_blank" class="hover:text-stone-300 transition-colors">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+                    <svg class="w-5 h-5 md:w-6 md:h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
                 </a>
                 <a href="https://www.behance.net/ananaphotogr" target="_blank" class="hover:opacity-75 transition-opacity">
-                    <img src="behance-svgrepo-com.svg" alt="Behance" class="w-7 h-7 icon-white">
+                    <img src="behance-svgrepo-com.svg" alt="Behance" class="w-6 h-6 md:w-7 md:h-7 icon-white">
                 </a>
             </div>
         </div>
 
-        <div class="p-12 md:p-24 bg-stone-50">
-            <form id="contact-form" class="grid grid-cols-1 gap-8">
+        <div class="p-8 md:p-24 bg-stone-50">
+            <form id="contact-form" class="grid grid-cols-1 gap-6">
                 <div class="relative">
                     <input type="text" id="name" required class="peer w-full p-4 bg-transparent border-b border-stone-300 focus:border-stone-800 outline-none transition-all placeholder-transparent" placeholder="Name">
                     <label for="name" class="absolute left-0 -top-4 text-stone-500 text-[10px] uppercase tracking-widest transition-all">Name</label>
@@ -62,20 +72,6 @@
                         <label for="email" class="absolute left-0 -top-4 text-stone-500 text-[10px] uppercase tracking-widest transition-all">Email</label>
                     </div>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="relative">
-                        <input type="text" id="event" required class="peer w-full p-4 bg-transparent border-b border-stone-300 focus:border-stone-800 outline-none transition-all placeholder-transparent" placeholder="Event Type">
-                        <label for="event" class="absolute left-0 -top-4 text-stone-500 text-[10px] uppercase tracking-widest transition-all">Event Type</label>
-                    </div>
-                    <div class="relative">
-                        <input type="date" id="date" required class="w-full p-4 bg-transparent border-b border-stone-300 focus:border-stone-800 outline-none transition-all text-stone-500">
-                        <label class="absolute left-0 -top-4 text-stone-500 text-[10px] uppercase tracking-widest">Date</label>
-                    </div>
-                </div>
-                <div class="relative">
-                    <textarea id="msg" required rows="3" class="peer w-full p-4 bg-transparent border-b border-stone-300 focus:border-stone-800 outline-none transition-all placeholder-transparent" placeholder="Message"></textarea>
-                    <label for="msg" class="absolute left-0 -top-4 text-stone-500 text-[10px] uppercase tracking-widest transition-all">Message</label>
-                </div>
                 <button type="submit" class="w-full border border-stone-800 py-4 uppercase tracking-[0.2em] text-[10px] hover:bg-stone-900 hover:text-white transition-all">
                     Send Inquiry
                 </button>
@@ -83,17 +79,13 @@
         </div>
     </section>
 
-    <div id="success-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm p-6">
-        <div class="bg-white p-12 rounded-3xl text-center shadow-2xl max-w-sm w-full animate-in fade-in zoom-in duration-300">
-            <h3 class="text-3xl font-light mb-4">Message Sent</h3>
-            <p class="text-stone-600 mb-8">Thank you! Your inquiry has been received. I will get back to you soon.</p>
-            <a href="index.html" class="block w-full bg-stone-900 text-white py-4 uppercase tracking-[0.2em] text-xs hover:bg-stone-700 transition-all">
-                Back to Home
-            </a>
-        </div>
-    </div>
-
     <script>
+        // Menu Toggle
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => { menu.classList.toggle('hidden'); });
+
+        // Form Submit
         document.getElementById('contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
             document.getElementById('success-modal').classList.remove('hidden');
