@@ -7,11 +7,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body { background-color: #f7f5f2; color: #3d3b3a; font-family: 'Georgia', serif; }
-        /* A smoother, more serious transition */
         .luxury-transition { transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
         #preloader { transition: opacity 1.5s ease-in-out; opacity: 1; }
         
-        /* Breathing Animation for Preloader only */
+        /* Breathing Animation for Preloader */
         @keyframes breathe { 0%, 100% { opacity: 0.2; transform: scale(0.98); } 50% { opacity: 1; transform: scale(1); } }
         .animate-breathe { animation: breathe 3s ease-in-out infinite; }
     </style>
@@ -71,12 +70,12 @@
 
         <div class="relative z-10 text-white max-w-lg">
             <h2 class="text-3xl md:text-6xl font-light mb-8 tracking-tight leading-tight">Capturing Real <br> Moments <br> with Heart</h2>
-            <a href="contact.html" class="inline-block border border-white px-8 py-3 uppercase tracking-[0.2em] text-xs hover:bg-white hover:text-black luxury-transition">
+            <a href="contact.html" class="inline-block border border-white px-8 py-3 uppercase tracking-[0.2em] text-xs hover:bg-white hover:text-black luxury-transition animate-bounce">
                 Inquire for Booking
             </a>
         </div>
 
-        <a href="#work" class="absolute bottom-10 z-10 text-white uppercase text-xs tracking-[0.3em] hover:opacity-100 opacity-60 animate-bounce">
+        <a href="#work" class="absolute bottom-10 z-10 text-white uppercase text-xs tracking-[0.3em] hover:opacity-100 opacity-60">
             Scroll
         </a>
     </section>
@@ -107,7 +106,7 @@
     </section>
 
     <footer class="text-center py-12 bg-stone-100">
-        <p class="text-stone-500 text-xs md:text-sm tracking-widest">© 2026 Tinussyy Design.</p>
+        <p class="text-stone-500 text-xs md:text-sm tracking-widest">© 2026 Tinussyy Design. Available for freelance.</p>
     </footer>
 
 </body>
