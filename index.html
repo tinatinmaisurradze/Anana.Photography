@@ -7,19 +7,13 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body { background-color: #f7f5f2; color: #3d3b3a; font-family: 'Georgia', serif; }
-        .luxury-transition { transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
+        /* A smoother, more serious transition */
+        .luxury-transition { transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
         #preloader { transition: opacity 1.5s ease-in-out; opacity: 1; }
         
-        /* Breathing Animation */
+        /* Breathing Animation for Preloader only */
         @keyframes breathe { 0%, 100% { opacity: 0.2; transform: scale(0.98); } 50% { opacity: 1; transform: scale(1); } }
         .animate-breathe { animation: breathe 3s ease-in-out infinite; }
-
-        /* Booking Button Pulse */
-        @keyframes soft-pulse {
-            0%, 100% { box-shadow: 0 0 0 0px rgba(255, 255, 255, 0.2); }
-            50% { box-shadow: 0 0 20px 8px rgba(255, 255, 255, 0.15); }
-        }
-        .animate-booking-pulse { animation: soft-pulse 3s infinite ease-in-out; }
     </style>
 </head>
 <body>
@@ -77,7 +71,7 @@
 
         <div class="relative z-10 text-white max-w-lg">
             <h2 class="text-3xl md:text-6xl font-light mb-8 tracking-tight leading-tight">Capturing Real <br> Moments <br> with Heart</h2>
-            <a href="contact.html" class="inline-block border border-white/50 px-8 py-3 uppercase tracking-[0.2em] text-xs hover:bg-white hover:text-black luxury-transition animate-booking-pulse">
+            <a href="contact.html" class="inline-block border border-white px-8 py-3 uppercase tracking-[0.2em] text-xs hover:bg-white hover:text-black luxury-transition">
                 Inquire for Booking
             </a>
         </div>
