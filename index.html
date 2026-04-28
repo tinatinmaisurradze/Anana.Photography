@@ -45,16 +45,23 @@
         </button>
     </nav>
 
-    <div id="mobile-menu" class="hidden fixed inset-0 z-40 bg-black flex flex-col items-center justify-center space-y-8 text-white uppercase tracking-widest text-lg">
-        <a href="index.html">Work</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
+    <div id="mobile-menu" class="hidden fixed inset-0 z-50 bg-black flex flex-col items-center justify-center space-y-8 text-white uppercase tracking-widest text-lg">
+        <button id="close-menu-button" class="absolute top-6 right-6 focus:outline-none">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+        
+        <a href="index.html" class="hover:text-stone-400">Work</a>
+        <a href="about.html" class="hover:text-stone-400">About</a>
+        <a href="contact.html" class="hover:text-stone-400">Contact</a>
     </div>
 
     <script>
         const btn = document.getElementById('mobile-menu-button');
+        const closeBtn = document.getElementById('close-menu-button');
         const menu = document.getElementById('mobile-menu');
-        btn.addEventListener('click', () => { menu.classList.toggle('hidden'); });
+        
+        btn.addEventListener('click', () => { menu.classList.remove('hidden'); });
+        closeBtn.addEventListener('click', () => { menu.classList.add('hidden'); });
     </script>
 
     <section class="relative w-full h-screen overflow-hidden flex flex-col justify-end md:justify-center items-center md:items-start px-6 md:pl-16 text-center md:text-left pb-24 md:pb-0">
